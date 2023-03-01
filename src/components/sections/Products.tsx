@@ -2,15 +2,14 @@ import { productsData } from '../../data'
 
 export const Products = () => {
     return (
-        <main>
-            <h2>Nuestros Productos</h2>
-            <div>
-                <div>
+        <main className='contenido-principal contenedor' >
+            <h2 className='text-center'>Nuestros Productos</h2>
+            <div className='listado-productos'>
                     {
                         productsData.map((item, i) => (
-                            <div key={i}>
+                            <div key={i} className='producto'>
                                 <img src={item.img} alt={`${item.title}`} />
-                                <div>
+                                <div className='texto-produto'>
                                     <h3>{item.title}</h3>
                                     <p>{item.description}</p>
                                     <p>$ {item.price}</p>
@@ -18,7 +17,6 @@ export const Products = () => {
                             </div>
                         ))
                     }
-                </div>
             </div>
         </main>
     );
