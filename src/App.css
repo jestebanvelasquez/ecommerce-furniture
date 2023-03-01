@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;600&family=Source+Sans+Pro:wght@200;300;400&display=swap');
+
+/*  ***************** Recomendados en los proyectos ***************** */
+
+/* estilos que se le aplican al documento: hacks para mejorar estilos */
+/*  los rems equivalen a 1 rem = 16px, se pueden cambiar de la sgt manera:; */
+html {
+    box-sizing: border-box;/* cuando se le añada un width y luego un paddin a un elemento no modificque su tamaño original*/
+    font-size: 62.5%; /* 1 REM = 10PX*/
+}
+
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 2;/* espacio entre letra*/
+}
+
+/* ******************************************************************************************* */
+
+
+
+
+
+/***************************** Definiendo estilos Globals *****************************************/
+
+h1, h2, h3 {
+    font-family: 'Oswald', sans-serif;
+    margin:0;/* eliminando el margin del texto por defecto*/
+}
+
+
+h1{
+font-size: 5rem;
+}
+h2{
+    font-size: 3rem;
+
+}
+h3{
+    font-size: 3rem;
+
+}
+
+
+/************ dando el ancho a la pagina  *****************/
+a {
+    text-decoration: none;
+    color:#000;
+}
+
+
+
+/************ dando el ancho a la pagina  *****************/
+.contenedor {
+    max-width: 120rem;
+    /* manera tambien de centrar:  0 auto 0 auto ó margin inline 0 */
+    /* margin: 0 auto; */
+    margin-inline: auto;
+}
+
+/************ imagenes no se desborden *****************/
+/* para que todas las imagenes no se desborden, esto hara que siempre sean relativas al tamaño del padre */
+img{
+    max-width: 100%;
+    display: block;
+}
+
+/*****************************************************************************************************/
+
+
+
+
+
+
+
+
+
+/* title y navigation */
+
+.header-title {
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    text-align: center;
+    text-transform:capitalize ;
+    font-size: 4rem;
+}
+.header-title span {
+    color: #037bc0
+}
+
+
+
+
+/*  ************** Navegacion ***************  */
+
+.container-nav{
+    border-top: 0.1rem solid #e1e1e1;
+}
+
+
+.nav-ppal {
+    /* atajos */
+    /* border-color: #e1e1e1;
+    border-top-style: solid;
+    border-width: 1px; */
+
+    /* atajos como las manecillas del reloj hacia la derecha el orden top rigth botton left */
+    /* padding-top: 50px;
+    padding-right: 0px;
+    padding-bottom: 30px;
+    padding-left: 20px; */
+    /* padding: 50px 0 30px 20px; o tambien  */
+    padding: 2rem 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav-ppal a {
+    font-size: 2rem;
+}
+
+/*  ************** Imagen Background Hero 'HomePage' ***************  */
+
+.hero {
+    background-image: url('./assets/principal.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 55rem;
+}
+
+
+/*  ************** CATEGORIAS  : APLICANDO GRID LAYOUT  ***************  */
+
+.categorias h2{
+    text-align: center;
+    padding: 1.5rem;
+}
+
+.listado-categories {
+    display: grid ;
+    /* crea contenedores segun la cantidad que necesites columnas o filas:rows */
+    /* grid-template-columns: 200px 200px 200px 200px ; */
+    /* grid-template-rows: 100px  100px ; */
+
+
+    /*  manera mas corta de hacerlo : 3 columnas de una fraccion igual  */
+
+    grid-template-columns: repeat(3, 1fr) ;
+    gap: 2rem;
+    /* background-color: aquamarine; */
+}
+
+/* recuerda que los 'a' tienen un display inline o no se pueden alinear, si se cambia a display block si */
+.categoria a {
+    display: block;
+    text-align: center;
+    padding: 2rem;
+    font-size: 2rem;
+}
+
+.categoria a:hover{
+    background-color: #037bc0;
+    color: #e1e1e1;
+    border-bottom-right-radius: 2rem;
+    border-bottom-left-radius: 2rem;
+    transition: 0.3s;
+}

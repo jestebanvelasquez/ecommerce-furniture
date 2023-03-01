@@ -1,0 +1,13 @@
+.sobre-nosotros {
+    background-color: red;
+    width: 200px;
+    height: 300px;
+    padding: 20px;
+    box-sizing:border-box; 
+    /* box-sizing : el tamaño que ocupara nuestra caja, sus propiedades =>
+        border-box : no pasara del width dado,
+        content-box: se le sumara el padding al width o tamaño dado 
+
+
+    */
+}
