@@ -147,6 +147,7 @@ dar formato, color etc */
 }
 .nav-ppal a {
     font-size: 2rem;
+    text-transform: capitalize;
 }
 
 /*  ************** Imagen Background Hero 'HomePage' ***************  */
