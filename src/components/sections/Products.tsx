@@ -9,10 +9,11 @@ export const Products = () => {
                         productsData.map((item, i) => (
                             <div key={i} className='producto'>
                                 <img src={item.img} alt={`${item.title}`} />
-                                <div className='texto-produto'>
+                                <div className='texto-producto'>
                                     <h3>{item.title}</h3>
                                     <p>{item.description}</p>
-                                    <p>$ {item.price}</p>
+                                    <p className='precio'>$ {item.price}</p>
+                                    <a className='bton'  href='#' type='button'>Agregar a Carrito</a>
                                 </div>
                             </div>
                         ))

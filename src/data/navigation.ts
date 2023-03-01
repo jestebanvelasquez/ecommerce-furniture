@@ -4,5 +4,7 @@ export const navigationData = [
     {href: 'blog', title: 'blog'},
     {href: 'gallery', title: 'gallery'},
     {href: 'contact', title: 'contact'},
+    {href: 'shop', title: 'shop'},
+
 
 ]
