@@ -13,7 +13,7 @@ export const Products = () => {
                                     <h3>{item.title}</h3>
                                     <p>{item.description}</p>
                                     <p className='precio'>$ {item.price}</p>
-                                    <a className='bton'  href='/shop' type='button'>Agregar a Carrito</a>
+                                    <a className='bton'  href='#' type='button'>Agregar a Carrito</a>
                                 </div>
                             </div>
                         ))
