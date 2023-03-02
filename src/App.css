@@ -91,10 +91,12 @@ dar formato, color etc */
     padding: 1rem;
     border-radius: .5rem;
     transition: background-color .3s ease-out;
+    border: none;
 }
 
 .bton:hover{
     background-color: #d0a703;
+    cursor: pointer;
 
 }
 
@@ -497,4 +499,57 @@ background-color: #037bc0;
     width: 50rem;
     height: 50rem;
     object-fit: cover;
+}
+
+
+
+
+/* *************************************** Contact Page Css ******************************************* */
+
+
+
+.formulario{
+    max-width: 60rem;
+    margin: 0 auto;
+}
+
+.formulario fieldset{
+    border: .1rem solid #2a2929;
+    margin-bottom: 2rem;
+}
+.formulario legend{
+    background-color: #037bc0;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    text-transform: capitalize;
+    padding: 1rem;
+    margin-bottom: 4rem;
+}
+
+.campo{
+    display: flex;
+    margin-bottom: 2rem;
+
+}
+
+.campo label{
+flex-basis: 10rem;
+}
+
+/*  Podemos pasar a cada input dependiendo del tipo y agruparlos para darles estilos uno a uno, o podemos darle estilos a todos e ignorar los que no queremos estilizar */
+/* .campo input[type='text'],
+input[type='email'],
+input[type='tel'],
+input[type='password'],
+input[type='textarea']{
+    flex: 1;
+    border: .1rem solid #d8d8d8
+} */
+
+.campo inputs:not([type='textarea']), 
+.campo textarea, 
+.campo select  {
+    flex: 1;
+    border: .1rem solid #d8d8d8
 }
