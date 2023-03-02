@@ -6,31 +6,31 @@ export const categoriesData = [
     {
         img: oficina,
         title: 'Oficina',
-        href: '#'
+        href: '/gallery'
     },
     {
         img: hogar,
         title: 'Hogar',
-        href: '#'
+        href: '/gallery'
     },
     {
         img: cocina,
         title: 'Cocina',
-        href: '#'
+        href: '/gallery'
     },
     {
         img: oficina,
         title: 'Oficina',
-        href: '#'
+        href: '/gallery'
     },
     {
         img: hogar,
         title: 'Hogar',
-        href: '#'
+        href: '/gallery'
     },
     {
         img: cocina,
         title: 'Cocina',
-        href: '#'
+        href: '/gallery'
     },
 ]

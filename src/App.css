@@ -87,6 +87,7 @@ dar formato, color etc */
     display: block;
     color: #2a2929;
     font-weight: 700;
+    text-align: center;
     padding: 1rem;
     border-radius: .5rem;
     transition: background-color .3s ease-out;
@@ -95,6 +96,17 @@ dar formato, color etc */
 .bton:hover{
     background-color: #d0a703;
 
+}
+
+.contenido-principal{
+    padding-top: 5rem;
+}
+
+
+/*  para que mida max 300 px */
+
+.max-width-30{
+ max-width: 30rem;
 }
 
 /*****************************************************************************************************/
@@ -266,12 +278,6 @@ dar formato, color etc */
 /*  *************************************************** PRODUCTOS  : APLICANDO GRID LAYOUT   *******************************************  */
 
 
-.contenido-principal{
-    padding-top: 5rem;
-}
-
-
-
 
 /* ****************** Creando el Grid del Listado **************************** */
 .listado-productos{
@@ -399,4 +405,96 @@ background-color: #037bc0;
     margin-top: 5rem;
     text-align: center;
     font-weight: 300;
+}
+
+
+
+
+
+
+
+
+/* *************************************** About Page Css ******************************************* */
+
+.container-nosotros{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    /* responsive grid: 
+    con la siguiente propiedad hacemos  que cuando llegue a un minimo se asigne un 1fr a cada elemento:  esto es sin media querys */
+    grid-template-columns: repeat(auto-fit, minmax( 25rem, 1fr));/* cuando sea menor a 25rem tomara 1 fr cada elemento*/
+    gap: 10rem
+}
+
+.imagen img {
+ border-radius: 1rem;
+}
+
+.informacion-nosostros{
+    font-weight: 400;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+
+
+
+/* *************************************** Blog Page Css ******************************************* */
+
+
+.contenedor-blog{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    column-gap: 4rem;
+}
+
+/* colcocando borde gris al final de cada entrada */
+.entrada{
+    border-bottom: .5rem solid #d8d8d8 ;
+    padding-bottom: 4rem;
+    margin-bottom: 4rem;
+}
+
+/* si es la ultima entrada no le agregamos el bordec con: */
+.entrada:last-of-type{
+    border:none
+}
+
+.entrada-meta{
+    display: flex;
+    justify-content: space-between;
+}
+
+.entrada-meta p {
+    font-weight: 600;
+}
+
+.entrada-meta span{
+    color: #037bc0;
+}
+
+.entrada-blog{
+    text-align: justify;
+
+}
+
+
+
+/* *************************************** Galeria Page Css ******************************************* */
+
+
+.galeria{
+    list-style: none;
+    padding: 0;/*quitar el paddign de la imagen*/
+    margin: 0; /*quitar el margin de la imagen*/
+    display: grid;
+    grid-template-columns: repeat(3, 2fr);
+    gap: 2rem;
+}
+
+.galeria img {
+    width: 50rem;
+    height: 50rem;
+    object-fit: cover;
 }
