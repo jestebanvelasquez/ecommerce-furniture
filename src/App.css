@@ -11,8 +11,6 @@ html {
 
 body {
     font-family: 'Source Sans Pro', sans-serif;
-    font-weight: 400;
-    font-size: 1.6rem;
     line-height: 2;/* espacio entre letra*/
     color: #2a2929;
 
@@ -26,23 +24,44 @@ body {
 
 /***************************** Definiendo estilos Globals *****************************************/
 
-h1, h2, h3 {
+h1,
+h2,
+h3,
+h4 {
     font-family: 'Oswald', sans-serif;
-    margin:0 0 5rem 0;/* eliminando el margin del texto que trae por defecto  por defecto*/
-    text-shadow: 0.2rem 0.2rem 0.2rem #21212171;
+    margin:0 0 2rem 0;/* eliminando el margin del texto que trae por defecto  por defecto*/
+    text-shadow: 0rem 0.2rem 0.2rem #21212171;
 }
 
 
-h1{
-font-size: 6rem;
+h4{
+    font-size: 5rem;
 }
+@media (min-width: 768px){ 
+    h4{
+        font-size: 8rem;
+    }
+}
+
 h2{
-    font-size: 4rem;
+    font-size: 3rem;
 
+}
+
+@media (min-width: 768px){ 
+    h2{
+        font-size: 4rem;
+    }
 }
 h3{
     font-size: 3rem;
 
+}
+
+@media (min-width: 768px){ 
+    h3{
+        font-size: 4rem;
+    }
 }
 
 
@@ -50,9 +69,19 @@ h3{
 a {
     text-decoration: none;
     color:#2a2929;
+    font-size: 2rem;
 }
 
-
+@media (min-width: 768px){ 
+    p{
+        font-size: 1.3rem;
+    }
+}
+@media (min-width: 1024px){ 
+    p{
+        font-size: 1.5rem;
+    }
+}
 
 /************ dando el ancho a la pagina  *****************/
 .contenedor {
@@ -61,6 +90,7 @@ a {
     /* margin: 0 auto; */
     margin-inline: auto;
 }
+
 
 /************ imagenes no se desborden *****************/
 /* para que todas las imagenes no se desborden, esto hara que siempre sean relativas al tamaño del padre */
@@ -127,6 +157,7 @@ dar formato, color etc */
     margin-top: 5rem;
     text-align: center;
     text-transform:capitalize ;
+    /* font-size: 10rem; */
 }
 .header-title span {
     color: #037bc0
@@ -156,13 +187,20 @@ dar formato, color etc */
     /* padding: 50px 0 30px 20px; o tambien  */
     padding: 2rem 0px;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
+}
+@media (min-width: 768px){ 
+    .nav-ppal{
+        justify-content: space-between;   
+        flex-direction: row; 
+    }
 }
 .nav-ppal a {
     font-size: 2rem;
     text-transform: capitalize;
 }
+
 
 /*  ************** Imagen Background Hero 'HomePage' ***************  */
 
@@ -171,31 +209,61 @@ dar formato, color etc */
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;/* para posicionar la imagen en 'x' - 'y' solo los backgroundsimg: tambien center, right, left etc..*/
-    height: 55rem;
+    height: 25rem;
 }
 
+@media (min-width: 768px){ 
+    .hero{
+        height: 60rem;
+
+    }
+}
+@media (min-width: 1600px){ 
+    .hero{
+        height: 80rem;
+    }
+}
 
 /*  ************** CATEGORIAS  : APLICANDO GRID LAYOUT  ***************  */
 
 .categorias{
-    padding-top: 5rem;
+    padding: 5rem 0;
 }
 .categorias h2{
     padding: 1.5rem;
 }
+.categoria img{
+    width: 100%;
+}
+.categoria{
+    margin-bottom: 2rem;
+}
+@media (min-width: 768px){ 
+    .categoria{
+        margin-bottom: 0;
+    }
+}
 
 .listado-categories {
-    display: grid ;
-    /* crea contenedores segun la cantidad que necesites columnas o filas:rows */
-    /* grid-template-columns: 200px 200px 200px 200px ; */
-    /* grid-template-rows: 100px  100px ; */
+    margin-bottom: 1rem;
+}
 
 
-    /*  manera mas corta de hacerlo : 3 columnas de una fraccion igual  */
-
-    grid-template-columns: repeat(3, 1fr) ;
-    gap: 2rem;
-    /* background-color: aquamarine; */
+@media (min-width: 768px){ 
+    .listado-categories {
+        display: grid ;
+        /* crea contenedores segun la cantidad que necesites columnas o filas:rows */
+        /* grid-template-columns: 200px 200px 200px 200px ; */
+        /* grid-template-rows: 100px  100px ; */
+    
+    
+        /*  manera mas corta de hacerlo : 3 columnas de una fraccion igual  */
+    
+        grid-template-columns: repeat(3, 1fr) ;
+        gap: 2rem;
+        /* background-color: aquamarine; */
+    }
+    
 }
 
 /* recuerda que los 'a' tienen un display inline o no se pueden alinear, si se cambia a display block si */
@@ -218,22 +286,34 @@ dar formato, color etc */
 
 /*  ************** ABOUT  : APLICANDO FLEXBOX  ***************  */
 
-
-/* paso 1  */
 .sobre-nosotros{
-    /* para aplicar un lienar gradient: de izquierda a derecha, esto puede varias segun la necesidad
-    en este caso es: de izquierda a derecha, el 50% va a ser negro y apartir del 51% va aser rojo
-    background-image: linear-gradient(to right, black 50%, red 100%);
-    tambien para cortar y que se vea una claro corte de color es:
-    background-image: linear-gradient(to right, black 50%, red 50% red 100%);
-    para que apartir del 50% sea rojo esto sirve para dividir en dos colores y al final se le agrega la imagen que se quiere 
-    */
-    background-image: linear-gradient(to right, transparent 50%, #037bc0 50%, #037bc0 100%),url('./assets/nosotros.jpg');
-    padding: 10rem 0;
-    background-position: left center;/* posicion dentro de la imagen url que se quiere mostrar*/
-    background-repeat: no-repeat;/* todas las imagenes se repiten por defecto, con esto no lo hara*/
-    background-size: 100%, 130rem;/* para organizar los tamaños, recordar que se tienen dos imagenes, el gradient y la url, se dice que la primera se muestre al 100% y la otra solo 120rem*/
-    margin-top: 3rem;
+        background-image: linear-gradient(to bottom, transparent 50%, #037bc0 50%, #037bc0 100%),url('./assets/nosotros.jpg');
+        padding: 10rem 0;
+        background-position: top center;/* posicion dentro de la imagen url que se quiere mostrar*/
+        background-repeat: no-repeat;/* todas las imagenes se repiten por defecto, con esto no lo hara*/
+        background-size: 100%, 50rem;/* para organizar los tamaños, recordar que se tienen dos imagenes, el gradient y la url, se dice que la primera se muestre al 100% y la otra solo 120rem*/
+        margin-top: 3rem;
+}
+
+
+@media (min-width: 768px){ 
+    /* paso 1  */
+    .sobre-nosotros{
+        /* para aplicar un lienar gradient: de izquierda a derecha, esto puede varias segun la necesidad
+        en este caso es: de izquierda a derecha, el 50% va a ser negro y apartir del 51% va aser rojo
+        background-image: linear-gradient(to right, black 50%, red 100%);
+        tambien para cortar y que se vea una claro corte de color es:
+        background-image: linear-gradient(to right, black 50%, red 50% red 100%);
+        para que apartir del 50% sea rojo esto sirve para dividir en dos colores y al final se le agrega la imagen que se quiere 
+        */
+        background-image: linear-gradient(to right, transparent 50%, #037bc0 50%, #037bc0 100%),url('./assets/nosotros.jpg');
+        padding: 10rem 0;
+        background-position: left center;/* posicion dentro de la imagen url que se quiere mostrar*/
+        background-repeat: no-repeat;/* todas las imagenes se repiten por defecto, con esto no lo hara*/
+        background-size: 100%, 130rem;/* para organizar los tamaños, recordar que se tienen dos imagenes, el gradient y la url, se dice que la primera se muestre al 100% y la otra solo 120rem*/
+        margin-top: 3rem;
+    }
+    
 }
 
 /* **** CON GRID ***** */
@@ -259,14 +339,35 @@ dar formato, color etc */
 /*  HACIENDO EL PASO 2 Y 3 CON FLEXBOX */
 
 .sobre-nosotros-grid{
-    display: flex;
-    justify-content: flex-end;
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    /* justify-content: flex-end; */
+}
+
+@media (min-width: 768px){ 
+    .sobre-nosotros-grid{
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: unset;
+        /* display: flex;
+        justify-content: flex-end; */
+    }
 }
 
 .texto-nosotros{
-    flex-basis: 40%;/* ancho del elemento*/
+    grid-row: 2 / 3;
+    padding-left: 2rem;
+    /*flex-basis: 40%;/* ancho del elemento*/
     /* padding-left: 10rem; */
+
     color:#fff;
+}
+@media (min-width: 768px){ 
+    .texto-nosotros{
+        grid-column: 2 / 3;
+        /*flex-basis: 40%;/* ancho del elemento*/
+        gap: 10rem;
+    }
+    
 }
 
 /* CUANDO USAR GRID O FLEXBOX:
@@ -282,6 +383,10 @@ dar formato, color etc */
 
 
 /* ****************** Creando el Grid del Listado **************************** */
+
+
+@media (min-width: 768px){ 
+    
 .listado-productos{
 display: grid;
 grid-template-columns: repeat(6, 1fr);/* creara 7 | | | | | | | lineas dentro de ellas iran los elementos*/
@@ -299,7 +404,7 @@ row-gap: 2rem;
 }
 /* utilizamos el object fit: cover para que la imagen tome todo el espacio disponible sin deformarse */
 .producto:nth-child(1) img{
-    height: 50rem;
+    height: 100%;
     width: 100%;
     object-fit: cover;
 }
@@ -345,14 +450,23 @@ row-gap: 2rem;
     grid-column-start: 5;
     grid-column-end: 7;
 }
-
+}
 /* *************************************************************************** */
 
-
+@media (min-width: 768px){ 
+    .producto{
+        margin-bottom: 0;
+    }
+}
 
 .producto{
 background-color: #037bc0;
+margin-bottom: 4rem;
 }
+
+/*.producto:last-of-type{/* eliminar el bottom al ultimo elemento*/
+    /* margin-bottom: 0; */
+/* } */
 
 /* aplicando animaciones a una imagen */
 
@@ -388,11 +502,15 @@ background-color: #037bc0;
     border-top: .1rem solid #e1e1e1;
     margin-top: 5rem;
     padding: 5rem;
+    text-align: center;
 }
 
-.grid-footer{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+@media (min-width: 768px){ 
+    .grid-footer{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
 }
 
 .site-footer h3{
@@ -424,18 +542,28 @@ background-color: #037bc0;
     /* responsive grid: 
     con la siguiente propiedad hacemos  que cuando llegue a un minimo se asigne un 1fr a cada elemento:  esto es sin media querys */
     grid-template-columns: repeat(auto-fit, minmax( 25rem, 1fr));/* cuando sea menor a 25rem tomara 1 fr cada elemento*/
-    gap: 10rem
+    gap: 5rem;
 }
 
 .imagen img {
- border-radius: 1rem;
+    border-radius: 1rem;
+    padding: 1rem;
 }
 
-.informacion-nosostros{
+.informacion-nosotros{
     font-weight: 400;
     display: flex;
     flex-direction: column;
+    padding: 5rem;
     justify-content: center;
+    font-size: 1.5rem;
+    text-align: justify;
+    /* background-color: #d0a703; */
+}
+@media (min-width: 768px){ 
+    .informacion-nosotros{
+        padding: 1.2rem;
+    }
 }
 
 
@@ -446,9 +574,16 @@ background-color: #037bc0;
 
 
 .contenedor-blog{
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    column-gap: 4rem;
+   padding: 1rem;
+}
+
+@media (min-width: 1024px){ 
+    .contenedor-blog{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 4rem;
+        padding: 0;
+    }
 }
 
 /* colcocando borde gris al final de cada entrada */
@@ -456,6 +591,7 @@ background-color: #037bc0;
     border-bottom: .5rem solid #d8d8d8 ;
     padding-bottom: 4rem;
     margin-bottom: 4rem;
+    padding: 1rem;
 }
 
 /* si es la ultima entrada no le agregamos el bordec con: */
@@ -485,14 +621,30 @@ background-color: #037bc0;
 
 /* *************************************** Galeria Page Css ******************************************* */
 
-
 .galeria{
     list-style: none;
-    padding: 0;/*quitar el paddign de la imagen*/
+    padding: 1rem;/*quitar el paddign de la imagen*/
     margin: 0; /*quitar el margin de la imagen*/
-    display: grid;
-    grid-template-columns: repeat(3, 2fr);
-    gap: 2rem;
+    
+}
+.galeria li{
+    margin-bottom: 4rem;
+}
+
+@media (min-width: 768px){ 
+    
+    .galeria{
+        list-style: none;
+        padding: 0;/*quitar el paddign de la imagen*/
+        margin: 0; /*quitar el margin de la imagen*/
+        display: grid;
+        grid-template-columns: repeat(3, 2fr);
+        gap: 2rem;
+    }
+    .galeria li{
+        margin-bottom: 0;
+    }
+    
 }
 
 .galeria img {
